@@ -1,5 +1,5 @@
 import express from "express";
-import { getWallets, getWallet, addWallet, deleteWallet, updateWallet } from "../controllers/walletDBController.js";
+import { getWallets, getWallet, addWallet, updateWallet, deleteWallet } from "../controllers/walletDBController.js";
 const router = express.Router();
 
 // Make sure it is just a slash, not /api
@@ -10,3 +10,4 @@ router.put("/:id", updateWallet);
 router.delete("/:id", deleteWallet);
 
 export default router;
+
