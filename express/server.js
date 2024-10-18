@@ -5,8 +5,7 @@ import cors from 'cors';
 import logger from './middleware/logger.js';
 import wallets from './routes/wallets.js';
 import dbwallets from './routes/dbwallets.js';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import user from './routes/user.js';
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -24,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Routes
 app.use('/api/wallets', wallets);
 app.use('/api/dbwallets', dbwallets);
+app.use('/api/v1/users', user);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

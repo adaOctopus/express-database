@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-const walletSchema = new mongoose.Schema({
-    name: {
+const transactionSchema = new mongoose.Schema({
+    walletName: {
         type: String,
         required: true,
         // unique: true
@@ -15,18 +15,13 @@ const walletSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    balance: {
-        type: Number,
-        required: true,
-        default: 0
-    },
-    token: {
+    secretHash: {
         type: String,
         required: true,
-        default: "ADA"
+        unique: true
     }
 }, { timestamps: true });
 
 
-const Wallet = mongoose.model('Wallet', walletSchema);
-export default Wallet;
+const Transaction = mongoose.model('Transaction', transactionSchema);
+export default Transaction;
