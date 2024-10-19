@@ -6,6 +6,7 @@ import logger from './middleware/logger.js';
 import wallets from './routes/wallets.js';
 import dbwallets from './routes/dbwallets.js';
 import user from './routes/user.js';
+import { verifyAuthToken } from './middleware/verifyAuthToken.js';
 
 const app = express();
 const port = process.env.PORT || 8000;
