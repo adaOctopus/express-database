@@ -6,6 +6,7 @@ import logger from './middleware/logger.js';
 import wallets from './routes/wallets.js';
 import dbwallets from './routes/dbwallets.js';
 import user from './routes/user.js';
+import txSigning from './routes/txSigning.js';
 import { verifyAuthToken } from './middleware/verifyAuthToken.js';
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/api/wallets', wallets);
 app.use('/api/dbwallets', dbwallets);
 app.use('/api/v1/users', user);
+app.use('/api/v1/txSigning', txSigning)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
