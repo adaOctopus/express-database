@@ -3,7 +3,7 @@ import Genesis from "../schema/genesisModel.js";
 import User from "../schema/userModel.js";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { Lucid, Blockfrost } from "lucid-cardano";
+import { Lucid, Blockfrost } from "@lucid-evolution/lucid";
 import CryptoJS from "crypto-js";
 
 // Steps
@@ -24,7 +24,7 @@ const USERID = process.env.USERID;
 // From the genesis wallet:  addr_test1vqv3edq2k7yf0g2sdj04sm4v5z5knlvr74cqw7ahp3an27sey3lwn
 // Send tADA to here addr_test1qpt8jjf0y64272aqka534xhf9400lecuxuuw2m44yrqzrfdhtk52gaz3zt7g2esxu9lqs5rwdm2sxtzaqu6ycqlmglyssqulam
 
-const lucid = await Lucid.new(
+const lucid = await Lucid(
     new Blockfrost(NETWORKURL, NETWORKID),
     "Preview",
 );
